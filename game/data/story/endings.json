@@ -1,0 +1,85 @@
+{
+  "endings": [
+    {
+      "id": "angel_dawn_guardian",
+      "trend": "angelKindness",
+      "title": "天使结局·守门黎明",
+      "description": "你以封闭圆环稳定祭坛，街区在黎明前完成疏散。你留在疗养院，成为新的守门人。",
+      "required_flags": ["sealed_altar", "civilians_saved"],
+      "forbidden_flags": ["ending_gate_crossed"],
+      "epilogue": "清晨第一缕光照在封门钉上。你知道门后还在呼吸，但它再也叫不出你的名字。"
+    },
+    {
+      "id": "angel_confession_peace",
+      "trend": "angelKindness",
+      "title": "天使结局·告解之城",
+      "description": "你公开全部事实，连同自己的错误。审判漫长而疼痛，但幸存者终于拿回姓名与尊严。",
+      "required_flags": ["confession_made", "public_truth"],
+      "forbidden_flags": ["false_verdict"],
+      "epilogue": "法庭外的钟终于重新走动。每一声都像在提醒：善良不是无罪，而是愿意承担。"
+    },
+    {
+      "id": "angel_sacrifice_watcher",
+      "trend": "angelKindness",
+      "title": "天使结局·静默看守",
+      "description": "你优先疏散居民并接手夜间巡查。无人再提那口井，但每个人都记得你没让灾难外溢。",
+      "required_flags": ["city_evacuation"],
+      "forbidden_flags": ["civilians_used"],
+      "epilogue": "你在值班簿最后一页写下：若必须有人听见低语，那就由我来。"
+    },
+    {
+      "id": "demon_crimson_throne",
+      "trend": "demonMalice",
+      "title": "恶魔结局·赤纹统辖",
+      "description": "你通过封锁和交易掌控了信息流。恐惧让城市变得高效，而你成为唯一解释真相的人。",
+      "required_flags": ["lockdown", "sold_clue"],
+      "forbidden_flags": ["confession_made"],
+      "epilogue": "你把钥匙挂在城门内侧。门外的人想进来，门内的人想出去，最终都得先见你。"
+    },
+    {
+      "id": "demon_false_prophet",
+      "trend": "demonMalice",
+      "title": "恶魔结局·伪典先知",
+      "description": "你篡改终稿并嫁祸死者，成为唯一权威。信徒按你的版本祈祷，也按你的版本沉默。",
+      "required_flags": ["false_verdict", "forged_canon"],
+      "forbidden_flags": ["public_truth"],
+      "epilogue": "你在新版序言写下第一句话：真相从来不重要，重要的是谁来命名它。"
+    },
+    {
+      "id": "demon_hunter_king",
+      "trend": "demonMalice",
+      "title": "恶魔结局·围猎王座",
+      "description": "你用血供换来了精准追猎。目标被肃清，代价是街区开始默认牺牲是必要步骤。",
+      "required_flags": ["blood_pact", "civilians_used"],
+      "forbidden_flags": ["city_evacuation"],
+      "epilogue": "顾探员把最后一份报表递给你：数字完美，夜里却总有人在门外哭。"
+    },
+    {
+      "id": "eldritch_deep_sleeper",
+      "trend": "eldritchCorruption",
+      "title": "黑化结局·深井聆听者",
+      "description": "你完成仪式却没有彻底开门。你成为回声代理人，日常看似正常，梦里却永远在值夜。",
+      "required_flags": ["accepted_whisper", "ritual_completed"],
+      "forbidden_flags": ["whisper_rejected"],
+      "epilogue": "你听见全城的梦从同一个井口溢出。每个名字都在呼唤你给出下一句。"
+    },
+    {
+      "id": "eldritch_black_sun",
+      "trend": "eldritchCorruption",
+      "title": "黑化结局·门后黑日",
+      "description": "你跨过门槛，带着错译和真名抵达另一侧。那里的光像液体，缓慢覆盖你的过去。",
+      "required_flags": ["ending_gate_crossed", "eldritch_mark"],
+      "forbidden_flags": ["ending_gate_closed"],
+      "epilogue": "你回望一眼，门已经没有门框。只有一轮黑日，正以你的心跳升起。"
+    },
+    {
+      "id": "eldritch_hollow_city",
+      "trend": "eldritchCorruption",
+      "title": "黑化结局·空心城",
+      "description": "井口被重新打开，封锁又维持太久。城里的人继续生活，却逐渐失去梦与记忆边界。",
+      "required_flags": ["opened_well", "lockdown"],
+      "forbidden_flags": ["sealed_altar"],
+      "epilogue": "街灯按时亮起，商店按时开门，只有影子会在黄昏后各自走散。"
+    }
+  ]
+}

@@ -1,0 +1,697 @@
+{
+  "nodes": [
+    {
+      "id": "c1_n01",
+      "chapter": "chapter1",
+      "title": "夜班签到",
+      "npc_id": "matron",
+      "text": "旧疗养院的钟在零点后停摆。林修女递来一本缺页登记簿，要你先写下今晚的名字。",
+      "choices": [
+        {
+          "id": "c1_n01_a",
+          "text": "认真登记并安抚林修女。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["mercy_pact"],
+          "next": "c1_n02"
+        },
+        {
+          "id": "c1_n01_b",
+          "text": "质问她在隐瞒什么，逼她交出钥匙。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["key_taken_by_force"],
+          "next": "c1_n02"
+        }
+      ]
+    },
+    {
+      "id": "c1_n02",
+      "chapter": "chapter1",
+      "title": "门外烟雾",
+      "npc_id": "detective",
+      "text": "顾探员守在铁门旁，他要看你手里的登记簿，并暗示今夜会死人。",
+      "choices": [
+        {
+          "id": "c1_n02_a",
+          "text": "分享你看到的线索，要求共同调查。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["shared_truth"],
+          "next": "c1_n03"
+        },
+        {
+          "id": "c1_n02_b",
+          "text": "只透露部分信息，交换他的配枪和通行证。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["armed_access"],
+          "next": "c1_n03"
+        }
+      ]
+    },
+    {
+      "id": "c1_n03",
+      "chapter": "chapter1",
+      "title": "井口摊位",
+      "npc_id": "medium",
+      "text": "沈婆在废井旁摆着香灰和骨铃，她说你的影子不是你的。",
+      "choices": [
+        {
+          "id": "c1_n03_a",
+          "text": "买下护身符，并询问旧井封印。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["protective_talisman"],
+          "next": "c1_n04"
+        },
+        {
+          "id": "c1_n03_b",
+          "text": "要求她教你禁忌咒句，承诺不外传。",
+          "effects": { "eldritchCorruption": 1 },
+          "set_flags": ["accepted_whisper"],
+          "next": "c1_n04"
+        }
+      ]
+    },
+    {
+      "id": "c1_n04",
+      "chapter": "chapter1",
+      "title": "碎页档案室",
+      "npc_id": "scholar",
+      "text": "裴学者递来两页被血浸透的译稿，一页是正译，一页是她后来改写的版本。",
+      "choices": [
+        {
+          "id": "c1_n04_a",
+          "text": "坚持保留原译，并帮助她补写缺失段落。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["restored_pages"],
+          "next": "c1_n05"
+        },
+        {
+          "id": "c1_n04_b",
+          "text": "抄下错误译文，准备将来反制别人。",
+          "effects": { "eldritchCorruption": 1 },
+          "set_flags": ["eldritch_mark"],
+          "next": "c1_n05"
+        }
+      ]
+    },
+    {
+      "id": "c1_n05",
+      "chapter": "chapter1",
+      "title": "地下犬笼",
+      "npc_id": "drifter",
+      "text": "黎渡在地下通道里放出一只缠满符线的幽犬，说它会先咬最怕的人。",
+      "choices": [
+        {
+          "id": "c1_n05_a",
+          "text": "解开符线，让幽犬离开疗养院。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["spirit_released"],
+          "next": "c1_n06"
+        },
+        {
+          "id": "c1_n05_b",
+          "text": "命令黎渡把幽犬当诱饵试探暗门。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["cruel_tactic"],
+          "next": "c1_n06"
+        }
+      ]
+    },
+    {
+      "id": "c1_n06",
+      "chapter": "chapter1",
+      "title": "熄灯礼拜堂",
+      "npc_id": "matron",
+      "text": "熄灯后的礼拜堂只有一排残烛，祭台上压着一根银钉和封条。",
+      "choices": [
+        {
+          "id": "c1_n06_a",
+          "text": "点燃残烛，为名单上的亡者祈祷。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["mercy_catalog"],
+          "next": "c1_n07"
+        },
+        {
+          "id": "c1_n06_b",
+          "text": "拔走银钉，准备以后强行开门。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["stolen_nail"],
+          "next": "c1_n07"
+        }
+      ]
+    },
+    {
+      "id": "c1_n07",
+      "chapter": "chapter1",
+      "title": "停职者办公室",
+      "npc_id": "detective",
+      "text": "顾探员把旧徽章按在桌面上，说只要你一句话，他就能再赌一次。",
+      "choices": [
+        {
+          "id": "c1_n07_a",
+          "text": "把徽章还给他，要求按程序调查。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["detective_trust"],
+          "next": "c1_n08"
+        },
+        {
+          "id": "c1_n07_b",
+          "text": "拿证据要挟他，逼他先替你清路。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["betrayed_detective"],
+          "next": "c1_n08"
+        }
+      ]
+    },
+    {
+      "id": "c1_n08",
+      "chapter": "chapter1",
+      "title": "井下回声",
+      "npc_id": "medium",
+      "text": "沈婆揭开井盖，井壁像活物一样收缩，低语在邀请你叫出真名。",
+      "choices": [
+        {
+          "id": "c1_n08_a",
+          "text": "用护身符封住井口，暂时压住回声。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["closed_pit"],
+          "next": "c1_n09"
+        },
+        {
+          "id": "c1_n08_b",
+          "text": "俯身倾听回声，记录它给出的地址。",
+          "effects": { "eldritchCorruption": 1 },
+          "set_flags": ["opened_well"],
+          "next": "c1_n09"
+        }
+      ]
+    },
+    {
+      "id": "c1_n09",
+      "chapter": "chapter1",
+      "title": "错译与真名",
+      "npc_id": "scholar",
+      "text": "裴学者让你决定最终注释是保留神名，还是改成更易懂的假词。",
+      "choices": [
+        {
+          "id": "c1_n09_a",
+          "text": "保留真名并注明风险，避免误导后人。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["true_names_preserved"],
+          "next": "c1_n10"
+        },
+        {
+          "id": "c1_n09_b",
+          "text": "改写神名，方便你将来控制仪式。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["forged_text"],
+          "next": "c1_n10"
+        }
+      ]
+    },
+    {
+      "id": "c1_n10",
+      "chapter": "chapter1",
+      "title": "第一夜誓言",
+      "npc_id": "drifter",
+      "text": "黎渡在楼梯口点起最后一根烟，问你今晚到底想救人，还是想赢。",
+      "choices": [
+        {
+          "id": "c1_n10_a",
+          "text": "发誓优先保护居民，哪怕放弃关键线索。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["chapter1_kind_route"],
+          "next": "c2_n01"
+        },
+        {
+          "id": "c1_n10_b",
+          "text": "发誓查清真相，不惜利用任何人。",
+          "effects": { "demonMalice": 1, "eldritchCorruption": 1 },
+          "set_flags": ["chapter1_dark_route"],
+          "next": "c2_n01"
+        }
+      ]
+    },
+    {
+      "id": "c2_n01",
+      "chapter": "chapter2",
+      "title": "冷柜清点",
+      "npc_id": "matron",
+      "text": "太平间冷柜标签被人调换。林修女请求你按本名重新归档，别让亡者再错位。",
+      "choices": [
+        {
+          "id": "c2_n01_a",
+          "text": "按原始记录恢复身份并补全遗嘱。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["saved_orphan_record"],
+          "next": "c2_n02"
+        },
+        {
+          "id": "c2_n01_b",
+          "text": "取下几枚封印符，带去做实验验证。",
+          "effects": { "eldritchCorruption": 1 },
+          "set_flags": ["sigil_removed"],
+          "next": "c2_n02"
+        }
+      ]
+    },
+    {
+      "id": "c2_n02",
+      "chapter": "chapter2",
+      "title": "风雨追逐",
+      "npc_id": "detective",
+      "text": "暴雨里一名目击者倒在巷口，嫌疑人正翻墙逃走。顾探员喊你立即选一个。",
+      "choices": [
+        {
+          "id": "c2_n02_a",
+          "text": "先救目击者并止血，保住证言。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["witness_alive"],
+          "next": "c2_n03"
+        },
+        {
+          "id": "c2_n02_b",
+          "text": "立刻追嫌疑人，把目击者交给路人。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["witness_lost"],
+          "next": "c2_n03"
+        }
+      ]
+    },
+    {
+      "id": "c2_n03",
+      "chapter": "chapter2",
+      "title": "血供试探",
+      "npc_id": "medium",
+      "text": "沈婆在符盘边推来一把小刀，说只要一滴血，井中回声就会告诉你下一具尸体位置。",
+      "choices": [
+        {
+          "id": "c2_n03_a",
+          "text": "拒绝血供，改用祷词延迟回声。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["refused_blood"],
+          "next": "c2_n04"
+        },
+        {
+          "id": "c2_n03_b",
+          "text": "划破手掌完成血供，换取坐标。",
+          "effects": { "demonMalice": 1, "eldritchCorruption": 1 },
+          "set_flags": ["blood_pact"],
+          "next": "c2_n04"
+        }
+      ]
+    },
+    {
+      "id": "c2_n04",
+      "chapter": "chapter2",
+      "title": "伪页归处",
+      "npc_id": "scholar",
+      "text": "裴学者拿出她曾经伪造的译页，问你是焚毁，还是继续保留做诱饵。",
+      "choices": [
+        {
+          "id": "c2_n04_a",
+          "text": "当场焚毁伪页，并记录错误来源。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["burned_grimoire"],
+          "next": "c2_n05"
+        },
+        {
+          "id": "c2_n04_b",
+          "text": "把伪页藏起来，准备以后操纵局势。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["kept_grimoire"],
+          "next": "c2_n05"
+        }
+      ]
+    },
+    {
+      "id": "c2_n05",
+      "chapter": "chapter2",
+      "title": "誓印锁链",
+      "npc_id": "drifter",
+      "text": "黎渡脖颈上的誓印发烫，他说再往前走必须有人替誓。",
+      "choices": [
+        {
+          "id": "c2_n05_a",
+          "text": "帮他拆解誓印，承担部分风险。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["drifter_freed"],
+          "next": "c2_n06"
+        },
+        {
+          "id": "c2_n05_b",
+          "text": "让他先探路，把风险全部压给他。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["drifter_sacrificed"],
+          "next": "c2_n06"
+        }
+      ]
+    },
+    {
+      "id": "c2_n06",
+      "chapter": "chapter2",
+      "title": "封门告解",
+      "npc_id": "matron",
+      "text": "林修女承认自己封过祭坛。她请求你别开门，否则很多旧债会一起出来。",
+      "choices": [
+        {
+          "id": "c2_n06_a",
+          "text": "接受告解，先整理证据再行动。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["shared_truth"],
+          "next": "c2_n07"
+        },
+        {
+          "id": "c2_n06_b",
+          "text": "逼她立刻开门，今晚就结束一切。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["altar_unsealed"],
+          "next": "c2_n07"
+        }
+      ]
+    },
+    {
+      "id": "c2_n07",
+      "chapter": "chapter2",
+      "title": "交易警戒线",
+      "npc_id": "detective",
+      "text": "顾探员准备突入地下区，但他只信你一句承诺：你站在规则内，还是规则外。",
+      "choices": [
+        {
+          "id": "c2_n07_a",
+          "text": "公开合作，按流程共享证据。",
+          "conditions": { "require_flags": ["shared_truth"] },
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["alliance_police"],
+          "next": "c2_n08"
+        },
+        {
+          "id": "c2_n07_b",
+          "text": "把线索卖给黑市买家，换地下通道图。",
+          "effects": { "demonMalice": 2 },
+          "set_flags": ["sold_clue"],
+          "next": "c2_n08"
+        }
+      ]
+    },
+    {
+      "id": "c2_n08",
+      "chapter": "chapter2",
+      "title": "黑香梦境",
+      "npc_id": "medium",
+      "text": "沈婆点燃黑香，房间像坠入深井。她说这口气能让你看见明天，也可能让你忘记自己。",
+      "choices": [
+        {
+          "id": "c2_n08_a",
+          "text": "喝下清醒茶，拒绝深潜梦境。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["clear_mind"],
+          "next": "c2_n09"
+        },
+        {
+          "id": "c2_n08_b",
+          "text": "吸入黑香，追问井底真正名字。",
+          "effects": { "eldritchCorruption": 2 },
+          "set_flags": ["accepted_whisper"],
+          "next": "c2_n09"
+        }
+      ]
+    },
+    {
+      "id": "c2_n09",
+      "chapter": "chapter2",
+      "title": "圆环刻印",
+      "npc_id": "scholar",
+      "text": "裴学者在铜环上留了两套刻印，一套用于封闭，一套用于召引。",
+      "choices": [
+        {
+          "id": "c2_n09_a",
+          "text": "刻下封闭纹，准备终局封门。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["sealed_altar"],
+          "next": "c2_n10"
+        },
+        {
+          "id": "c2_n09_b",
+          "text": "刻下召引纹，赌一次可控召唤。",
+          "effects": { "demonMalice": 1, "eldritchCorruption": 1 },
+          "set_flags": ["ritual_completed"],
+          "next": "c2_n10"
+        }
+      ]
+    },
+    {
+      "id": "c2_n10",
+      "chapter": "chapter2",
+      "title": "封城与逃生",
+      "npc_id": "drifter",
+      "text": "警报响起。黎渡说只够选一种方案：疏散整片街区，或封锁街区进行围猎。",
+      "choices": [
+        {
+          "id": "c2_n10_a",
+          "text": "立即疏散居民，哪怕放跑目标。",
+          "effects": { "angelKindness": 2 },
+          "set_flags": ["city_evacuation"],
+          "next": "c3_n01"
+        },
+        {
+          "id": "c2_n10_b",
+          "text": "封锁大门，所有人留在圈内筛查。",
+          "effects": { "demonMalice": 2 },
+          "set_flags": ["lockdown"],
+          "next": "c3_n01"
+        }
+      ]
+    },
+    {
+      "id": "c3_n01",
+      "chapter": "chapter3",
+      "title": "深层入口",
+      "npc_id": "matron",
+      "text": "通往祭坛的铁梯满是水渍。林修女步伐发抖，她问你是否还相信赎罪能成立。",
+      "choices": [
+        {
+          "id": "c3_n01_a",
+          "text": "握住她的手，一起下去。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["matron_supported"],
+          "next": "c3_n02"
+        },
+        {
+          "id": "c3_n01_b",
+          "text": "让她先走在前面替你探路。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["matron_resent"],
+          "next": "c3_n02"
+        }
+      ]
+    },
+    {
+      "id": "c3_n02",
+      "chapter": "chapter3",
+      "title": "账簿归属",
+      "npc_id": "detective",
+      "text": "顾探员要你交出地下账簿。他说这本账簿能救人，也能让很多人永远闭嘴。",
+      "choices": [
+        {
+          "id": "c3_n02_a",
+          "text": "把账簿交给他并备份公开版。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["saved_orphan_record"],
+          "next": "c3_n03"
+        },
+        {
+          "id": "c3_n02_b",
+          "text": "把账簿留在自己手里，保留勒索价值。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["blackmail_ledger"],
+          "next": "c3_n03"
+        }
+      ]
+    },
+    {
+      "id": "c3_n03",
+      "chapter": "chapter3",
+      "title": "回声核心",
+      "npc_id": "medium",
+      "text": "井中回声在祭坛下方聚成一道黑线。沈婆说只差一句就能决定它是沉睡还是降临。",
+      "choices": [
+        {
+          "id": "c3_n03_a",
+          "text": "诵读封印祷词，压低回声。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["warding_chant"],
+          "next": "c3_n04"
+        },
+        {
+          "id": "c3_n03_b",
+          "text": "念出深井名字，换取短暂全知。",
+          "effects": { "eldritchCorruption": 2 },
+          "set_flags": ["eldritch_mark"],
+          "next": "c3_n04"
+        }
+      ]
+    },
+    {
+      "id": "c3_n04",
+      "chapter": "chapter3",
+      "title": "誓印破口",
+      "npc_id": "drifter",
+      "text": "黎渡的誓印开始裂开。你可以用银钉切断契约，也可以让他强行顶住门缝。",
+      "choices": [
+        {
+          "id": "c3_n04_a",
+          "text": "用银钉切断誓印，带他撤离。",
+          "conditions": { "require_flags": ["stolen_nail"] },
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["drifter_redeemed"],
+          "next": "c3_n05"
+        },
+        {
+          "id": "c3_n04_b",
+          "text": "命令他顶住门缝，拖延三十秒。",
+          "effects": { "demonMalice": 2 },
+          "set_flags": ["drifter_sacrificed"],
+          "next": "c3_n05"
+        }
+      ]
+    },
+    {
+      "id": "c3_n05",
+      "chapter": "chapter3",
+      "title": "终稿落款",
+      "npc_id": "scholar",
+      "text": "裴学者要你在终稿上签名：真实注释会引发审判，伪注释会引发长期控制。",
+      "choices": [
+        {
+          "id": "c3_n05_a",
+          "text": "公开真实注释并承担后果。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["public_truth"],
+          "next": "c3_n06"
+        },
+        {
+          "id": "c3_n05_b",
+          "text": "写入可操控的伪注，掌握解释权。",
+          "effects": { "demonMalice": 1, "eldritchCorruption": 1 },
+          "set_flags": ["forged_canon"],
+          "next": "c3_n06"
+        }
+      ]
+    },
+    {
+      "id": "c3_n06",
+      "chapter": "chapter3",
+      "title": "终局圆环",
+      "npc_id": "matron",
+      "text": "祭坛圆环亮起。只要你说一句口令，今晚要么封闭，要么彻底改写。",
+      "choices": [
+        {
+          "id": "c3_n06_a",
+          "text": "启动封闭口令，所有人后撤。",
+          "effects": { "angelKindness": 2 },
+          "set_flags": ["sealed_altar"],
+          "next": "c3_n07"
+        },
+        {
+          "id": "c3_n06_b",
+          "text": "完成召引口令，让门完全开启。",
+          "effects": { "eldritchCorruption": 2 },
+          "set_flags": ["ritual_completed"],
+          "next": "c3_n07"
+        }
+      ]
+    },
+    {
+      "id": "c3_n07",
+      "chapter": "chapter3",
+      "title": "撤离走廊",
+      "npc_id": "detective",
+      "text": "走廊两头都在坍塌。顾探员说你只能保一边：居民，或者你抓到的目标。",
+      "choices": [
+        {
+          "id": "c3_n07_a",
+          "text": "带居民先撤，目标暂时放弃。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["civilians_saved"],
+          "next": "c3_n08"
+        },
+        {
+          "id": "c3_n07_b",
+          "text": "把居民留在掩体，先押走目标。",
+          "effects": { "demonMalice": 2 },
+          "set_flags": ["civilians_used"],
+          "next": "c3_n08"
+        }
+      ]
+    },
+    {
+      "id": "c3_n08",
+      "chapter": "chapter3",
+      "title": "低语合约",
+      "npc_id": "medium",
+      "text": "沈婆把黑线缠上你的手腕。她说现在拒绝还来得及，再晚一步你将听见所有人的梦。",
+      "choices": [
+        {
+          "id": "c3_n08_a",
+          "text": "拒绝低语，烧掉手腕印记。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["whisper_rejected"],
+          "clear_flags": ["accepted_whisper"],
+          "next": "c3_n09"
+        },
+        {
+          "id": "c3_n08_b",
+          "text": "接受低语，签下回声合约。",
+          "effects": { "eldritchCorruption": 2 },
+          "set_flags": ["accepted_whisper"],
+          "next": "c3_n09"
+        }
+      ]
+    },
+    {
+      "id": "c3_n09",
+      "chapter": "chapter3",
+      "title": "审判陈词",
+      "npc_id": "scholar",
+      "text": "最终听证会开始前，裴学者问你：要不要公开所有人的罪与失误。",
+      "choices": [
+        {
+          "id": "c3_n09_a",
+          "text": "公开全部事实，包括你自己的过失。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["confession_made"],
+          "next": "c3_n10"
+        },
+        {
+          "id": "c3_n09_b",
+          "text": "把责任推给已死的教团首领。",
+          "effects": { "demonMalice": 1 },
+          "set_flags": ["false_verdict"],
+          "next": "c3_n10"
+        }
+      ]
+    },
+    {
+      "id": "c3_n10",
+      "chapter": "chapter3",
+      "title": "门前一步",
+      "npc_id": "drifter",
+      "text": "黎渡在裂开的门前看着你：关门回去，还是穿过去拿到另一种黎明。",
+      "choices": [
+        {
+          "id": "c3_n10_a",
+          "text": "关门，留在这边处理余震。",
+          "effects": { "angelKindness": 1 },
+          "set_flags": ["ending_gate_closed"],
+          "next": "ENDING"
+        },
+        {
+          "id": "c3_n10_b",
+          "text": "迈过门槛，接受门后的注视。",
+          "effects": { "eldritchCorruption": 2 },
+          "set_flags": ["ending_gate_crossed"],
+          "next": "ENDING"
+        }
+      ]
+    }
+  ]
+}

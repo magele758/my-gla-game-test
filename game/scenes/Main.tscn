@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/scripts/main/Main.gd" id="1_main"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="RootMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainVBox" type="VBoxContainer" parent="RootMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="RootMargin/MainVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Whispers of the Hollow Ward"
+
+[node name="ContentWarning" type="Label" parent="RootMargin/MainVBox"]
+layout_mode = 2
+text = "内容警告：本作包含心理惊悚、暴力暗示与成人向叙事表达（非露骨）。"
+
+[node name="MatureToneToggle" type="CheckButton" parent="RootMargin/MainVBox"]
+layout_mode = 2
+button_pressed = true
+text = "启用完整成人氛围文本（18+软成人）"
+
+[node name="TrendLabel" type="Label" parent="RootMargin/MainVBox"]
+layout_mode = 2
+text = "趋势: 天使 0 | 恶魔 0 | 黑化 0"
+
+[node name="StoryText" type="RichTextLabel" parent="RootMargin/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = false
+fit_content = true
+scroll_active = true
+text = "..."
+
+[node name="NpcReply" type="RichTextLabel" parent="RootMargin/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 1
+fit_content = true
+scroll_active = false
+text = ""
+
+[node name="ChoicesPanel" type="PanelContainer" parent="RootMargin/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="ChoicesVBox" type="VBoxContainer" parent="RootMargin/MainVBox/ChoicesPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BottomRow" type="HBoxContainer" parent="RootMargin/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SaveButton" type="Button" parent="RootMargin/MainVBox/BottomRow"]
+layout_mode = 2
+text = "保存"
+
+[node name="LoadButton" type="Button" parent="RootMargin/MainVBox/BottomRow"]
+layout_mode = 2
+text = "读档"
+
+[node name="RestartButton" type="Button" parent="RootMargin/MainVBox/BottomRow"]
+layout_mode = 2
+text = "重开"
+
+[node name="StatusLabel" type="Label" parent="RootMargin/MainVBox/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+text = "状态: 初始化"

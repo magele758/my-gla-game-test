@@ -1,0 +1,67 @@
+npc_to_profile:
+  matron: matron_profile
+  detective: detective_profile
+  medium: medium_profile
+  drifter: drifter_profile
+  scholar: scholar_profile
+
+profiles:
+  default_profile:
+    provider_id: openai_like
+    base_url: ${OPENAI_BASE_URL:https://api.openai.com/v1}
+    api_key_env: OPENAI_API_KEY
+    model_name: ${OPENAI_MODEL:gpt-4o-mini}
+    temperature: 0.8
+    max_tokens: 220
+    timeout_seconds: 10
+    chat_path: /chat/completions
+
+  matron_profile:
+    provider_id: openai_like
+    base_url: ${MATRON_BASE_URL:https://api.openai.com/v1}
+    api_key_env: MATRON_API_KEY
+    model_name: ${MATRON_MODEL:gpt-4o-mini}
+    temperature: 0.6
+    max_tokens: 180
+    timeout_seconds: 10
+    chat_path: /chat/completions
+
+  detective_profile:
+    provider_id: openai_like
+    base_url: ${DETECTIVE_BASE_URL:https://api.openai.com/v1}
+    api_key_env: DETECTIVE_API_KEY
+    model_name: ${DETECTIVE_MODEL:gpt-4o-mini}
+    temperature: 0.9
+    max_tokens: 200
+    timeout_seconds: 10
+    chat_path: /chat/completions
+
+  medium_profile:
+    provider_id: openai_like
+    base_url: ${MEDIUM_BASE_URL:https://api.openai.com/v1}
+    api_key_env: MEDIUM_API_KEY
+    model_name: ${MEDIUM_MODEL:gpt-4o-mini}
+    temperature: 1.0
+    max_tokens: 220
+    timeout_seconds: 10
+    chat_path: /chat/completions
+
+  drifter_profile:
+    provider_id: openai_like
+    base_url: ${DRIFTER_BASE_URL:https://api.openai.com/v1}
+    api_key_env: DRIFTER_API_KEY
+    model_name: ${DRIFTER_MODEL:gpt-4o-mini}
+    temperature: 0.85
+    max_tokens: 200
+    timeout_seconds: 10
+    chat_path: /chat/completions
+
+  scholar_profile:
+    provider_id: openai_like
+    base_url: ${SCHOLAR_BASE_URL:https://api.openai.com/v1}
+    api_key_env: SCHOLAR_API_KEY
+    model_name: ${SCHOLAR_MODEL:gpt-4o-mini}
+    temperature: 0.7
+    max_tokens: 220
+    timeout_seconds: 10
+    chat_path: /chat/completions
