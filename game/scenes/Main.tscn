@@ -11,14 +11,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_main")
 
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078, 0.075, 0.102, 1)
+
 [node name="RootMargin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 24.0
+offset_left = 32.0
 offset_top = 24.0
-offset_right = -24.0
+offset_right = -32.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -30,10 +39,12 @@ theme_override_constants/separation = 10
 [node name="Header" type="Label" parent="RootMargin/MainVBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(0.71, 0.55, 1.0, 1)
 text = "Whispers of the Hollow Ward"
 
 [node name="ContentWarning" type="Label" parent="RootMargin/MainVBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.35, 0.35, 1)
 text = "内容警告：本作包含心理惊悚、暴力暗示与成人向叙事表达（非露骨）。"
 
 [node name="MatureToneToggle" type="CheckButton" parent="RootMargin/MainVBox"]
@@ -43,6 +54,7 @@ text = "启用完整成人氛围文本（18+软成人）"
 
 [node name="TrendLabel" type="Label" parent="RootMargin/MainVBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.65, 1)
 text = "趋势: 天使 0 | 恶魔 0 | 黑化 0"
 
 [node name="StoryText" type="RichTextLabel" parent="RootMargin/MainVBox"]
@@ -51,6 +63,7 @@ size_flags_vertical = 3
 bbcode_enabled = false
 fit_content = true
 scroll_active = true
+theme_override_colors/default_color = Color(0.85, 0.84, 0.88, 1)
 text = "..."
 
 [node name="NpcReply" type="RichTextLabel" parent="RootMargin/MainVBox"]
@@ -58,6 +71,7 @@ layout_mode = 2
 size_flags_vertical = 1
 fit_content = true
 scroll_active = false
+theme_override_colors/default_color = Color(0.55, 0.78, 0.55, 1)
 text = ""
 
 [node name="ChoicesPanel" type="PanelContainer" parent="RootMargin/MainVBox"]
@@ -88,4 +102,5 @@ text = "重开"
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.55, 1)
 text = "状态: 初始化"

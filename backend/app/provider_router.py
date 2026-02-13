@@ -45,7 +45,7 @@ class ProviderRouter:
             provider_id=str(cfg.get("provider_id", "openai_like")),
             base_url=self._expand_env(str(cfg.get("base_url", "https://api.openai.com/v1"))),
             api_key=api_key,
-            model_name=str(cfg.get("model_name", "gpt-4o-mini")),
+            model_name=self._expand_env(str(cfg.get("model_name", "gpt-4o-mini"))),
             temperature=float(cfg.get("temperature", 0.8)),
             max_tokens=int(cfg.get("max_tokens", 240)),
             timeout_seconds=float(cfg.get("timeout_seconds", 10.0)),

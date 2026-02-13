@@ -9,6 +9,7 @@ var axes: Dictionary = {
 	"eldritchCorruption": 0
 }
 var flags: Dictionary = {}
+var npc_trust: Dictionary = {}
 var chapter: String = "chapter1"
 var current_node_id: String = DEFAULT_NODE_ID
 var choice_history: Array = []
@@ -22,10 +23,24 @@ func reset() -> void:
 		"eldritchCorruption": 0
 	}
 	flags = {}
+	npc_trust = {}
 	chapter = "chapter1"
 	current_node_id = DEFAULT_NODE_ID
 	choice_history = []
 	npc_memory_snapshot = {}
+
+
+func init_trust(npc_profiles: Dictionary) -> void:
+	for npc_id in npc_profiles.keys():
+		npc_trust[npc_id] = int(npc_profiles[npc_id].get("trustInit", 40))
+
+
+func adjust_trust(npc_id: String, delta: int) -> void:
+	npc_trust[npc_id] = clampi(int(npc_trust.get(npc_id, 40)) + delta, 0, 100)
+
+
+func get_trust(npc_id: String) -> int:
+	return int(npc_trust.get(npc_id, 40))
 
 
 func apply_effects(effects: Dictionary) -> void:
@@ -67,6 +82,7 @@ func to_dict() -> Dictionary:
 	return {
 		"axes": axes.duplicate(true),
 		"flags": flags.duplicate(true),
+		"npc_trust": npc_trust.duplicate(true),
 		"chapter": chapter,
 		"current_node_id": current_node_id,
 		"choice_history": choice_history.duplicate(true),
@@ -77,6 +93,7 @@ func to_dict() -> Dictionary:
 func from_dict(data: Dictionary) -> void:
 	axes = data.get("axes", axes)
 	flags = data.get("flags", {})
+	npc_trust = data.get("npc_trust", {})
 	chapter = data.get("chapter", "chapter1")
 	current_node_id = data.get("current_node_id", DEFAULT_NODE_ID)
 	choice_history = data.get("choice_history", [])

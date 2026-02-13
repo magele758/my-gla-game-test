@@ -95,10 +95,12 @@ func _configure_npc_modules() -> void:
 		var npc_data: Dictionary = npc_by_id[npc_id]
 		npc_memory.configure_policy(npc_id, npc_data.get("memoryPolicy", {}))
 	npc_brain_client.configure_profiles(npc_by_id)
+	npc_brain_client.configure_role_cards(npc_by_id)
 
 
 func _start_new_game() -> void:
 	game_state.reset()
+	game_state.init_trust(npc_by_id)
 	npc_memory = NpcMemoryCls.new()
 	_configure_npc_modules()
 	_update_trend_label()
@@ -200,6 +202,10 @@ func _on_choice_pressed(choice_data: Dictionary) -> void:
 
 	if npc_id != "":
 		npc_memory.append_memory(npc_id, "玩家选择: %s" % choice_text)
+		var effects: Dictionary = choice_data.get("effects", {})
+		var kindness_delta := int(effects.get("angelKindness", 0))
+		var malice_delta := int(effects.get("demonMalice", 0))
+		game_state.adjust_trust(npc_id, kindness_delta * 3 - malice_delta * 3)
 
 	var next_node := branch_router.route_next(choice_data, game_state)
 	game_state.current_node_id = next_node
@@ -219,6 +225,7 @@ func _set_choice_buttons_disabled(disabled: bool) -> void:
 
 
 func _update_chapter_by_node(node_id: String) -> void:
+	var old_chapter := game_state.chapter
 	if node_id.begins_with("c1_"):
 		game_state.chapter = "chapter1"
 	elif node_id.begins_with("c2_"):
@@ -227,6 +234,10 @@ func _update_chapter_by_node(node_id: String) -> void:
 		game_state.chapter = "chapter3"
 	elif node_id == "ENDING":
 		game_state.chapter = "ending"
+
+	if game_state.chapter != old_chapter:
+		for npc_id in npc_by_id.keys():
+			npc_memory.summarize_chapter(npc_id, old_chapter)
 
 
 func _render_ending() -> void:

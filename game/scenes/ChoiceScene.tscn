@@ -1,8 +1,0 @@
-[gd_scene format=3]
-
-[node name="ChoiceScene" type="PanelContainer"]
-custom_minimum_size = Vector2(0, 180)
-
-[node name="ChoicesVBox" type="VBoxContainer" parent="."]
-layout_mode = 2
-theme_override_constants/separation = 8

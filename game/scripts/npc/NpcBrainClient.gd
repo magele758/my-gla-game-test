@@ -15,6 +15,23 @@ func configure_profiles(npc_map: Dictionary) -> void:
 		profile_by_npc[npc_id] = String(ai_profile.get("profile_id", "default_profile"))
 
 
+var role_card_by_npc: Dictionary = {}
+
+
+func configure_role_cards(npc_map: Dictionary) -> void:
+	for npc_id in npc_map.keys():
+		var npc_data: Dictionary = npc_map[npc_id]
+		role_card_by_npc[npc_id] = {
+			"name": String(npc_data.get("name", "")),
+			"publicPersona": String(npc_data.get("publicPersona", "")),
+			"hiddenSecret": String(npc_data.get("hiddenSecret", "")),
+			"desire": String(npc_data.get("desire", "")),
+			"fear": String(npc_data.get("fear", "")),
+			"taboo": String(npc_data.get("taboo", "")),
+			"alignmentBias": String(npc_data.get("alignmentBias", ""))
+		}
+
+
 func generate_reply(
 	npc_id: String,
 	npc_name: String,
@@ -33,7 +50,8 @@ func generate_reply(
 		"scene_prompt": scene_prompt,
 		"trend_scores": game_state.axes,
 		"memory": recent_memory,
-		"fallback_line": fallback_line
+		"fallback_line": fallback_line,
+		"role_card": role_card_by_npc.get(npc_id, {})
 	}
 
 	var http := HTTPRequest.new()

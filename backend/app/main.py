@@ -51,6 +51,16 @@ app.add_middleware(
 )
 
 
+class NpcRoleCard(BaseModel):
+    name: str = ""
+    publicPersona: str = ""
+    hiddenSecret: str = ""
+    desire: str = ""
+    fear: str = ""
+    taboo: str = ""
+    alignmentBias: str = ""
+
+
 class NpcReplyRequest(BaseModel):
     npc_id: str
     profile_id: str | None = None
@@ -60,6 +70,7 @@ class NpcReplyRequest(BaseModel):
     trend_scores: dict[str, int] = Field(default_factory=dict)
     memory: list[str] = Field(default_factory=list)
     fallback_line: str = ""
+    role_card: NpcRoleCard | None = None
 
 
 class NpcReplyResponse(BaseModel):
@@ -84,12 +95,40 @@ def _build_system_prompt(req: NpcReplyRequest) -> str:
         f"demon={req.trend_scores.get('demonMalice', 0)}, "
         f"eldritch={req.trend_scores.get('eldritchCorruption', 0)}"
     )
-    return (
-        "You are an NPC in a suspense-horror branching game. "
-        "Keep responses concise (1-3 sentences), atmospheric, and in-character. "
-        "No explicit sexual content, no sexual violence, no content involving minors. "
-        f"Current chapter: {req.chapter}. Trend scores: {trend}."
-    )
+
+    # Base world rules
+    parts: list[str] = [
+        "You are an NPC in a suspense-horror branching game set in an abandoned asylum.",
+        "Keep responses concise (1-3 sentences), atmospheric, and in-character.",
+        "Respond in the same language as the scene prompt (Chinese if scene is Chinese).",
+        "No explicit sexual content, no sexual violence, no content involving minors.",
+        f"Current chapter: {req.chapter}. Trend scores: {trend}.",
+    ]
+
+    # Inject NPC personality from role card
+    rc = req.role_card
+    if rc and rc.name:
+        parts.append(f"\n--- Your Character ---")
+        parts.append(f"Name: {rc.name}")
+        if rc.publicPersona:
+            parts.append(f"Public persona: {rc.publicPersona}")
+        if rc.hiddenSecret:
+            parts.append(f"Hidden secret (do NOT reveal directly, only hint): {rc.hiddenSecret}")
+        if rc.desire:
+            parts.append(f"Core desire: {rc.desire}")
+        if rc.fear:
+            parts.append(f"Deepest fear: {rc.fear}")
+        if rc.taboo:
+            parts.append(f"Topics you refuse to discuss: {rc.taboo}")
+        if rc.alignmentBias:
+            bias_map = {
+                "angelKindness": "subtly guide player toward mercy and protection",
+                "demonMalice": "subtly tempt player toward control and ruthlessness",
+                "eldritchCorruption": "subtly lure player toward forbidden knowledge and eldritch pacts",
+            }
+            parts.append(f"Behavioral tendency: {bias_map.get(rc.alignmentBias, rc.alignmentBias)}")
+
+    return "\n".join(parts)
 
 
 def _build_user_prompt(req: NpcReplyRequest) -> str:
