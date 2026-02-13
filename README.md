@@ -87,25 +87,46 @@ curl http://127.0.0.1:8000/health
 
 NPC专属配置为空时，自动回退到默认profile。
 
+## 集成插件
+
+| 插件 | Stars | 用途 |
+|------|-------|------|
+| [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager) | 3,310 | 非线性对话系统，打字机效果，条件分支 |
+| [AdaptiSound](https://github.com/MrWalkmanDev/AdaptiSound) | 85 | 背景音乐管理，场景切换淡入淡出，分层音轨 |
+| [Quest System](https://github.com/shomykohai/quest-system) | 434 | NPC秘密线追踪，任务步骤与完成状态管理 |
+| [ShaderV](https://github.com/arkology/ShaderV) | 1,133 | 可视化着色器：噪点/暗角/色差等恐怖后处理 |
+| [Godot Game Settings](https://github.com/zijcht/godot-game-settings) | 514 | 设置菜单（音量/分辨率/全屏/语言） |
+
+详见 [docs/plugin_integration.md](docs/plugin_integration.md)
+
 ## 项目结构
 ```
 ├── project.godot              # Godot项目入口
+├── addons/                    # 社区插件（5个）
+│   ├── dialogue_manager/      # 对话系统
+│   ├── AdaptiSound/           # 音频管理
+│   ├── quest_system/          # 任务追踪
+│   ├── shaderV/               # 视觉着色器
+│   └── ggs/                   # 游戏设置
 ├── game/
 │   ├── scenes/                # Main.tscn 主场景
 │   ├── scripts/
 │   │   ├── core/              # GameState / BranchRouter / SaveSystem / EndingResolver
 │   │   ├── main/              # Main.gd 主循环控制器
 │   │   └── npc/               # NpcBrainClient / NpcMemory
-│   └── data/
-│       ├── npcs/npcs.json     # 5名NPC角色卡与AI配置
-│       └── story/             # story_nodes.json + endings.json
+│   ├── data/
+│   │   ├── npcs/npcs.json     # 5名NPC角色卡与AI配置
+│   │   ├── story/             # story_nodes.json + endings.json
+│   │   └── quests/            # NPC秘密线任务定义
+│   ├── audio/                 # BGM与音效资源目录
+│   └── dialogues/             # Dialogue Manager 对话文件
 ├── backend/
 │   ├── app/                   # FastAPI网关（main / provider_router / safety_filter）
 │   ├── config/                # npc_profiles.yaml + fallback_lines.yaml
 │   ├── .env.example           # 环境变量模板
 │   └── requirements.txt
 ├── tools/validate_content.py  # 内容校验脚本（30节点/60选择/9结局）
-├── docs/                      # GDD / QA清单 / 上线Runbook
+├── docs/                      # GDD / QA清单 / 插件集成说明 / 上线Runbook
 ├── steam/                     # Steam商店页文案与素材清单
 └── web/                       # Web导出与部署说明
 ```

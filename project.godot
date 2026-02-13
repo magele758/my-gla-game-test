@@ -21,6 +21,10 @@ window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/AdaptiSound/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/ggs/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="forward_plus"

@@ -2,7 +2,11 @@
 .import/
 build/
 *.translation
+*.import
 
 backend/.env
 __pycache__/
 *.pyc
+
+# Audio source files (keep .ogg/.wav in repo if small)
+*.mp3
